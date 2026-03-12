@@ -5,9 +5,9 @@ const { findByIdAndDelete } = require('../model/User');
 
 
 
-router.get('./', async (req, res) => {
+router.get('/', async (req, res) => {
   const job = await Job.find()
-  res.json(Jobs);
+  res.json(jobs);
 });
 
 // create Job

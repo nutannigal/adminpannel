@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (token) {
-      axios.get('https://localhost:5000/api/auth/verify', {
+      axios.get('http://localhost:5000/api/auth/verify', {
         headers: { 'x-auth-token': token }
 
       })

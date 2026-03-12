@@ -1,18 +1,12 @@
-const jwt = require('jsonwebtoken')
-
+const jwt = require('jsonwebtoken');
 module.exports = (req, res, next) => {
-  const tokan = req.header('x-auth-tokan')
-
-
-  if (!tokan) return
-  res.status(401).json({ msg: 'no tokan' });
-
+  const token = req.header('x-auth-token');
+  if (!token) return res.status(401).json({ msg: 'No token' });
   try {
-    req.user = jwt.verify(token, process.env.JWT_SECRET).userId;
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded.userId;
     next();
-
-  }
-  catch {
-    res.status(401).json({ msg: 'Invalid token' })
+  } catch {
+    res.status(401).json({ msg: 'Invalid token' });
   }
 };

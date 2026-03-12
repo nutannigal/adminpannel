@@ -1,42 +1,47 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+html,body,#root{
+  height:100%;
+  margin:0;
+  padding:0;
+}
+#root{
+  display:flex;
+  flex-direction:column;
+}
+.container{
+  flex:1;
+}
+
+
+.navbar-brand{
+  font-weight:bold;
+}
+
+.jumbotron{
+  background-color: #f8f9fa;
   padding: 2rem;
-  text-align: center;
+  border-radius: 0.3rem;
+  margin-bottom: 2rem;
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.card:hover{
+  box-shodow:0 4px 8px rgba(0,0,0,0.1);
+  transiton:box-shadow 0.3s ease;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.sidebar{
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
 }
-
-.card {
-  padding: 2em;
+.sidebar .nav-link{color:#333;
+padding:0.5 rem 1rem 
 }
-
-.read-the-docs {
-  color: #888;
+.sidebar .nav-link .active{
+  background-color: #007bff;
+  color:white;
+}
+footer{
+  margin-top:auto;
 }

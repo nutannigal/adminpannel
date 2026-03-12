@@ -1,11 +1,10 @@
 const router = require('express').Router();
 const Service = require('../model/Service')
 const auth = require('../middleware/auth');
-const { findByIdAndDelete } = require('../model/User');
 
 
 
-router.get('./', async (req, res) => {
+router.get('/', async (req, res) => {
   const services = await Service.find()
   res.json(services);
 });

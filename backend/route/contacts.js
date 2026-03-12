@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const Contact = require('../model/Contact')
 const auth = require('../middleware/auth');
-const { findByIdAndDelete } = require('../model/User');
 
 
 // submit contact
@@ -13,10 +12,10 @@ router.post('/', async (req, res) => {
 
 // get all
 
-router.get('/',  auth,async (req, res) => {
+router.get('/',  auth, async (req, res) => {
   try{
-  const contacts =(await Contact.find()).sort({
-    createdAt:-1});
+  const contacts =await Contact.find().sort({
+    createdAt: -1});
 
 
 res.json(contacts);
